@@ -12,11 +12,19 @@ function App() {
   const onScroll = (e) => {
     if (e.deltaY < 0) {
       //스크롤 업
-      setBoard(board--);
+      setBoard((el) => el - 1);
     } else {
-      setBoard(board++);
+      setBoard((el) => el + 1);
     }
   };
+
+  useEffect(() => {
+    if (board > 4) {
+      setBoard(0);
+    } else if (board < 0) {
+      setBoard(4);
+    }
+  }, [board]);
 
   const setBody = () => {
     switch (board) {
@@ -32,13 +40,6 @@ function App() {
         return <Tmi></Tmi>;
     }
   };
-  useEffect(() => {
-    if (board > 4) {
-      setBoard(0);
-    } else if (board < 0) {
-      setBoard(4);
-    }
-  }, [board]);
 
   useEffect(() => {
     console.log(`object`);

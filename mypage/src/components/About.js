@@ -1,9 +1,5 @@
 function About() {
-  return (
-    <div>
-      기획자에서 개발자로! <br /> 안녕하세요 Front-End 개발자 김영윤입니다.
-    </div>
-  );
+  return <div>이름 : 김영윤</div>;
 }
 
 export default About;

@@ -1,5 +1,5 @@
 function Tmi() {
-  return <div></div>;
+  return <div>Tmi</div>;
 }
 
 export default Tmi;
